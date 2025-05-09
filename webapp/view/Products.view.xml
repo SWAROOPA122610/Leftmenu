@@ -1,0 +1,64 @@
+<mvc:View controllerName="leftmenu.controller.Products"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns="sap.m">
+
+    <Page id="_IDGenPage3" title="Products">
+        <content>
+            <!-- SmartFilterBar -->
+           <smartFilterBar:SmartFilterBar
+                id="idsmartFilterBar"
+                entitySet="Products"
+                persistencyKey="SmartTableProducts"
+                header="Filter Products"
+                >
+
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration1" key="ProductID" label="Product ID" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration2" key="ProductName" label="Product Name" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration3" key="SupplierID" label="Supplier ID" visibleInAdvancedArea="true"/>
+                    <smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration4" key="UnitPrice" label="Unit Price" visibleInAdvancedArea="true"/>
+                </smartFilterBar:controlConfiguration>
+
+            </smartFilterBar:SmartFilterBar>
+
+
+            <!-- SmartTable -->
+           <smartTable:SmartTable
+            id="smartTable"
+            entitySet="Products"
+            tableType="ResponsiveTable"
+            useExportToExcel="true"
+            useVariantManagement="true"
+            useTablePersonalisation="true"
+            header="Product List"
+            showRowCount="true"
+            smartFilterId="idsmartFilterBar"
+            enableAutoBinding="true"
+            persistencyKey="SmartTableProducts"
+            initiallyVisibleFields="ProductID,ProductName,Supplier/CompanyName,QuantityPerUnit,UnitPrice">
+            <Table id="idResponsiveTable" mode="SingleSelectMaster" selectionChange="handleSelectionChange"/>
+                <smartTable:customToolbar>
+                    <OverflowToolbar id="_IDGenOverflowToolbar2">
+                        <ToolbarSpacer id="_IDGenToolbarSpacer" />
+                        <Button id="_IDGenButton1" text="Reset" press="onReset" />
+                        <Button id="_IDGenButton2" text="Sort" icon="sap-icon://sort" press="onSort" />
+                        <Button id="_IDGenButton3" text="Group" icon="sap-icon://group-2" press="onGroup" />
+                        <MenuButton id="_IDGenMenuButton" text="Export" icon="sap-icon://share" type="Transparent"
+                            defaultAction="onDefaultActionAccept" beforeMenuOpen="onBeforeMenuOpen">
+                            <menu>
+                                <Menu id="_IDGenMenu">
+                                    <MenuItem id="_IDGenMenuItem" text="Export as PDF" icon="sap-icon://pdf-attachment" press="onMenuAction"/>
+                                    <MenuItem id="_IDGenMenuItem1" text="Export to Excel" icon="sap-icon://excel-attachment" press="onMenuAction"/>
+                                </Menu>
+                            </menu>
+                        </MenuButton>
+                    </OverflowToolbar>
+                </smartTable:customToolbar>
+            </smartTable:SmartTable>
+
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,76 @@
+<mvc:View controllerName="leftmenu.controller.Home"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m" 
+  xmlns:f="sap.f"
+   xmlns:icon="sap.ui.core.Icon"
+    xmlns:core="sap.ui.core">
+  <Page id="_IDGenPage1" title="Home">
+  <VBox id="_IDGenVBox2">
+    <Panel id="_IDGenPanel" headerText="Dashboard Overview" backgroundDesign="Transparent">
+      <f:GridList
+        id="dashboardGrid"
+        growing="false"
+        items="{/items}">
+        <f:GridListItem id="_IDGenGridListItem">
+          <VBox id="_IDGenVBox3" class="sapUiSmallMargin">
+            <HBox id="_IDGenHBox" alignItems="Center">
+              <core:Icon id="_IDGenIcon" src="{icon}" size="2rem" />
+
+              <Title id="_IDGenTitle3" text="{title}" level="H5" class="sapUiTinyMarginBegin"/>
+            </HBox>
+            <Text id="_IDGenText" text="{value}" class="sapUiTinyMarginTop sapMTextEmphasized" />
+            <Text id="_IDGenText1" text="{subtitle}" class="sapUiTinyMarginTop" />
+          </VBox>
+        </f:GridListItem>
+      </f:GridList>
+    </Panel>
+  </VBox>
+    <!---<content>
+      <Text id="_IDGenText12" text="Welcome to the Home Page!" />
+      <List id="_IDGenList" items="{EmployeeModel>/Employees}">
+        <items>
+        <CustomListItem id="_IDGenCustomListItem" class="sapUiTinyMargin">
+        <content>
+        <HBox id="_IDGenHBox" justifyContent="SpaceBetween">
+        <items>
+        <Text id="_IDGenText" text="{EmployeeModel>Name}"/>
+        <Text id="_IDGenTex" text="{parts:[{path:'EmployeeModel>Age'},{path:'EmployeeModel>Name'}],formatter:'.formatter.onReturnAgeMessage'}"/>
+        </items>
+        </HBox>
+        </content>
+        </CustomListItem>
+        </items>
+      </List>
+    </content>-->
+    <Panel id="_IDGenPanel1" headerText="Weekly User Trends" backgroundDesign="Transparent" class="sapUiMediumMarginTop">
+  <viz:VizFrame
+    id="idBarChart"
+    width="100%"
+    height="400px"
+    uiConfig="{applicationSet:'fiori'}"
+    vizType="bar"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+    
+    <viz:dataset>
+      <viz.data:FlattenedDataset id="_IDGenFlattenedDataset1" data="{/BarChartData}">
+        <viz.data:dimensions>
+          <viz.data:DimensionDefinition id="_IDGenDimensionDefinition" name="Week" value="{Week}" />
+        </viz.data:dimensions>
+        <viz.data:measures>
+          <viz.data:MeasureDefinition id="_IDGenMeasureDefinition" name="Registrations" value="{Registrations}" />
+        </viz.data:measures>
+      </viz.data:FlattenedDataset>
+    </viz:dataset>
+
+    <viz:feeds>
+      <viz.feeds:FeedItem id="_IDGenFeedItem" uid="valueAxis" type="Measure" values="Registrations" />
+      <viz.feeds:FeedItem id="_IDGenFeedItem1" uid="categoryAxis" type="Dimension" values="Week" />
+    </viz:feeds>
+  </viz:VizFrame>
+</Panel>
+
+    
+  </Page>
+</mvc:View>

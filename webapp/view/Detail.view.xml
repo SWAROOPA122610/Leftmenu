@@ -1,0 +1,30 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:smartform="sap.ui.comp.smartform"
+          xmlns:smartfield="sap.ui.comp.smartfield"
+          controllerName="leftmenu.controller.Detail">
+
+    <Page id="page1" title="{i18n>title}">
+        <content>
+
+            <!-- Smart Form to display Product details -->
+           <!--smartform:SmartForm id="idSmartForm" editable="false">
+                <smartform:Group id="idSmartFormGroup" label="Product Information">
+                <smartform:GroupElement id="_IDGenGroupElement1">
+                <Label id="_IDGenLabel" text="Product ID:"/>
+                <smartfield:SmartField id="_IDGenSmartField" value="{ProductID}"/>
+                </smartform:GroupElement>
+                <smartform:GroupElement id="_IDGenGroupElement2">
+                <Label id="_IDGenLabel1" text="Product Name:"/>
+                <smartfield:SmartField id="_IDGenSmartField1" value="{ProductName}"/>
+                </smartform:GroupElement>
+                <smartform:GroupElement id="_IDGenGroupElement3">
+                <Label id="_IDGenLabel2" text="Supplier ID:"/>
+                <smartfield:SmartField id="_IDGenSmartField2" value="{SupplierID}"/>
+                </smartform:GroupElement>
+                </smartform:Group>
+            </smartform:SmartForm-->
+            <Button text="back" />
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,33 @@
+<mvc:View controllerName="leftmenu.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:tnt="sap.tnt"
+    xmlns="sap.m">
+
+  <tnt:ToolPage id="toolPage">
+
+    <tnt:header>
+      <tnt:ToolHeader id="_IDGenToolHeader1">
+        <Button id="_IDGenButton" icon="sap-icon://menu2" press="onToggleSideNavigation" />
+        <Title id="_IDGenTitle" text="Left Menu App" />
+      </tnt:ToolHeader>
+    </tnt:header>
+
+    <tnt:sideContent>
+      <tnt:SideNavigation id="sideNavigation" itemSelect="onItemSelect">
+        <tnt:NavigationList id="_IDGenNavigationList">
+          <tnt:NavigationListItem id="_IDGenNavigationListItem" key="home" text="Home" icon="sap-icon://home" />
+          <tnt:NavigationListItem id="_IDGenNavigationListItem1" key="orders" text="Orders" icon="sap-icon://sales-order" />
+          <tnt:NavigationListItem id="_IDGenNavigationListItem2" key="products" text="Products" icon="sap-icon://product" />
+        </tnt:NavigationList>
+      </tnt:SideNavigation>
+    </tnt:sideContent>
+
+    <tnt:mainContents>
+      <App id="appContainer" />
+    </tnt:mainContents>
+
+  </tnt:ToolPage>
+   
+
+</mvc:View>

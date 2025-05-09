@@ -1,0 +1,25 @@
+{
+    "items": [
+      {
+        "title": "Total Users",
+        "value": "20,000",
+        "subtitle": "+5,000 Last 30 days users",
+        "icon": "sap-icon://group"
+      },
+      {
+        "title": "Total Subscriptions",
+        "value": "15,000",
+        "subtitle": "-800 Last 30 days",
+        "icon": "sap-icon://subscription"
+      },
+      {
+        "title": "Free Users",
+        "value": "5,000",
+        "subtitle": "+200 Last 30 days",
+        "icon": "sap-icon://customer"
+      }
+    ]
+  }
+
+  
+  
