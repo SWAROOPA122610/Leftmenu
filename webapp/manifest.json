@@ -17,23 +17,23 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/V2/Northwind/Northwind.svc/",
-        "type": "OData",
-        "settings": {
-          "annotations": [],
-          "localUri": "localService/mainService/metadata.xml",
-          "odataVersion": "2.0"
+          "uri": "/odata/v4/sales-order/",
+          "type": "OData",
+          "settings": {
+            "odataVersion": "4.0",
+           "localUri": "localService/mainService/metadata.xml",
+            "annotations": []
+          }
         }
-      }
     },
-    " SalesOrderModel":{
-  "type": "sap.ui.model.json.JSONModel",
-  "uri": "leftmenu/mockdata/Salesorder.json",
-  "dataSource":"SalesOrderJSONData",
-  "settings": {
-      "defaultBindingMode": "TwoWay"
-    }
- }
+    "SalesOrderModel":{
+          "type": "sap.ui.model.json.JSONModel",
+          "uri": "leftmenu/mockdata/Salesorder.json",
+          "dataSource":"SalesOrderJSONData",
+          "settings": {
+              "defaultBindingMode": "TwoWay"
+            }
+        }
   },
   "sap.ui": {
     "technology": "UI5",

@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
 
 specVersion: "3.1"
 metadata:
@@ -16,9 +16,9 @@ server:
             - /test-resources
           url: https://ui5.sap.com
         backend:
-          - path: /V2
-            url: https://services.odata.org
-            destination: NorthWind
+          - path: /odata/v4/sales-order
+            #url: https://51bd763atrial-dev-capmain-srv.cfapps.us10-001.hana.ondemand.com
+            destination: RUSHORDER_SRV
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
